@@ -12,7 +12,13 @@ if os.name == "nt":  # Windows
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "https://ocr-document-categorizer-mvp-2.onrender.com"
+        ]
+    }
+})
 
 
 def order_points(points: np.ndarray) -> np.ndarray:
