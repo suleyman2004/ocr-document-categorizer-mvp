@@ -20,4 +20,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 10000
 
 # Run app
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:10000"]
+# CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:10000"]
+
+CMD ["python", "app.py"]
