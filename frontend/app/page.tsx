@@ -39,7 +39,7 @@ export default function HomePage() {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("http://localhost:5000/process", {
+      const response = await fetch("https://ocr-document-categorizer-mvp.onrender.com/process", {
         method: "POST",
         body: formData,
       });
@@ -79,7 +79,7 @@ export default function HomePage() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:5000/reprocess", {
+      const response = await fetch("https://ocr-document-categorizer-mvp.onrender.com/reprocess", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
